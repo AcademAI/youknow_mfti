@@ -3,10 +3,8 @@
 import { NextResponse } from "next/server";
 import { createChaptersSchema } from "@/validators/course";
 import { ZodError } from "zod";
-//import { strict_output } from "@/lib/gpt";
-
 import { prisma } from "@/lib/db";
-import { createUnitsNChapters, createImageSearchTerm } from "@/lib/gpt";
+import { createUnitsNChapters, createImageSearchTerm } from "@/lib/gigachat";
 import { getKandinskyImage } from "@/lib/kandinsky";
 //import { getAuthSession } from "@/lib/auth";
 //import { getToken } from "next-auth/jwt";
@@ -26,7 +24,7 @@ export async function POST(req: Request, res: Response) {
       }[];
     }[];
 
-    // rewrite to call_gigachat
+    // gigachat пока не до конца справляется с инструкциями
     let output: string = await createUnitsNChapters(
       title,
       units
@@ -83,7 +81,7 @@ export async function POST(req: Request, res: Response) {
       },
     });
     
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ course_id: course.id });
   } catch (error) {
     if (error instanceof ZodError) {
       return new NextResponse("invalid body", { status: 400 });

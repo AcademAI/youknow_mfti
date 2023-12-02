@@ -43,9 +43,7 @@ const FeedCourseCard = async ({ course, user }: Props) => {
           <span className="absolute px-2 py-1 text-white rounded-md bg-black/60 w-fit bottom-2 left-2 right-2">
             {course.name}
           </span>
-          <div className="absolute top-2 right-2">
-            <DeleteCourseButton course={course} />
-          </div>
+
           <div className="absolute px-2 py-1 text-white rounded-md bg-black/60 w-fit top-2 left-2 right-2 flex items-center ">
             <Eye className="mr-2" />
             <span className="text-sm text-secondary-foreground/60">
@@ -53,6 +51,9 @@ const FeedCourseCard = async ({ course, user }: Props) => {
             </span>
           </div>
         </Link>
+        <div className="absolute top-2 right-2">
+          <DeleteCourseButton course={course} />
+        </div>
 
         <div className="p-4">
           <div className="flex items-center">

@@ -8,10 +8,6 @@ import CreateCourseForm from "@/components/CreateCourseForm";
 type Props = {};
 
 const CreatePage = async (props: Props) => {
-  const session = await getAuthSession();
-  if (!session?.user) {
-    return redirect("/gallery");
-  }
   
   // пока так
   const isPro = false;
