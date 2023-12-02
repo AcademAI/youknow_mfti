@@ -1,17 +1,17 @@
-import OpenAI from "openai";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-}
-);
+/*type outputUnits = {
+  title: string;
+  chapters: {
+    youtube_search_query: string;
+    chapter_title: string;
+  }[];
+}[];
 
 interface OutputFormat {
   [key: string]: string | string[] | OutputFormat;
 }
 
 export async function strict_output(
-  system_prompt: string,
-  user_prompt: string | string[],
+  output_units: outputUnits,
   output_format: OutputFormat,
   default_category: string = "",
   output_value_only: boolean = false,
@@ -21,7 +21,7 @@ export async function strict_output(
   verbose: boolean = false
 ) {
   // if the user input is in a list, we also process the output as a list of json
-  const list_input: boolean = Array.isArray(user_prompt);
+  const list_input: boolean = Array.isArray(output_units);
   // if the output format contains dynamic elements of < or >, then add to the prompt to handle dynamic elements
   const dynamic_elements: boolean = /<.*?>/.test(JSON.stringify(output_format));
   // if the output format contains list elements of [ or ], then we add to the prompt to handle lists
@@ -50,7 +50,7 @@ export async function strict_output(
     if (list_input) {
       output_format_prompt += `\nGenerate an array of json, one json for each input element.`;
     }
-
+    
     // Use OpenAI to get a response
     const response = await openai.chat.completions.create({
       temperature: temperature,
@@ -142,3 +142,4 @@ export async function strict_output(
 
   return [];
 }
+*/

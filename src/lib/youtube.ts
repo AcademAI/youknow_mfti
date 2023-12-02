@@ -1,5 +1,5 @@
 import { YoutubeTranscript } from "youtube-transcript";
-import { strict_output } from "./gpt";
+//import { strict_output } from "./gpt";
 
 export async function searchYoutube(searchQuery: string) {
   searchQuery = encodeURIComponent(searchQuery);
@@ -42,7 +42,7 @@ export async function getTranscript(videoId: string) {
     return "";
   }
 }
-
+/*
 export async function getQuestionsFromTranscript(
   transcript: string,
   chapter_name: string
@@ -73,3 +73,4 @@ export async function getQuestionsFromTranscript(
   console.log({questions})
   return questions;
 }
+*/

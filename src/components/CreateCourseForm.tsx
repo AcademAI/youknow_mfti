@@ -57,6 +57,14 @@ const CreateCourseForm = ( { isPro }: Props) => {
       });
       return;
     }
+    if (data.units.length < 2) {
+      toast({
+        title: "Ошибка",
+        description: "Укажите минимум 2 раздела",
+        variant: "destructive",
+      });
+      return;
+    }
     if (data.units.length > 10) {
       toast({
         title: "Ошибка",

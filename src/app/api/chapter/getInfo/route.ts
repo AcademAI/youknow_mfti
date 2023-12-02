@@ -1,9 +1,9 @@
 // /api/chapter/getInto
 
 import { prisma } from "@/lib/db";
-import { strict_output } from "@/lib/gpt";
+//import { strict_output } from "@/lib/gpt";
 import {
-  getQuestionsFromTranscript,
+  //getQuestionsFromTranscript,
   getTranscript,
   searchYoutube,
 } from "@/lib/youtube";
@@ -36,15 +36,16 @@ export async function POST(req: Request, res: Response) {
     let transcript = await getTranscript(videoId);
     let maxLength = 500;
     transcript = transcript.split(" ").slice(0, maxLength).join(" ");
-
+    /*
     const {summary}: {summary: string} = await strict_output(
       "Ты - помощник, способный делать краткое содержание транскрипта youtube видео. В ответе верни JSON объект.",
       "Сделай краткое содержание в 250 словах или менее, не говори о спонсорах или рекламе, не имеющих отношения к основной теме текста далее:\n" +
         transcript,
       { summary: "краткое содержания видео в типе string" }
     );
+    */
 
-
+    /*
     await prisma.chapter.update({
       where: { id: chapterId },
       data: {
@@ -52,7 +53,7 @@ export async function POST(req: Request, res: Response) {
         summary: summary,
       },
     });
-
+    */
     return NextResponse.json({ success: true });
   } catch (error) {
     if (error instanceof z.ZodError) {
