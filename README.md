@@ -8,8 +8,7 @@
 ### Настройка основного приложения
 1. `git clone https://github.com/AcademAI/youknow_mfti` 
 2. Заполните`.env` со значениями (пример в .env.example)
-3. npm i
-4. npx prisma db push
+3. `npm i`
 
 Далее либо:
 `npm run dev`
@@ -21,16 +20,16 @@
 ### Настройка микросервиса youknow_validations
 1. `git clone https://github.com/AcademAI/youknow_validations`
 2. Заполните`.env` со значениями (пример в .env.example)
-3. python -m venv venv
-4. pip install -r requirements.txt
-5. python main.py
+3. `python -m venv venv`
+4. `pip install -r requirements.txt`
+5. `python main.py`
 
 ### Настройка микросервиса ytscraper
 1. `git clone https://github.com/AcademAI/ytscraper`
 2. Заполните`.env` со значениями (пример в .env.example)
-3. python -m venv venv
-4. pip install -r requirements.txt
-5. python app.py
+3. `python -m venv venv`
+4. `pip install -r requirements.txt`
+5. `python app.py`
 
 
 ## Дополнительно
